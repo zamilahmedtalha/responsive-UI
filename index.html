@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zay – Product Landing</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .icons {
+            text-decoration: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            color: #212934;
+        }
+
+        .top-bar {
+            background: #212934;
+            color: #fff;
+            font-size: 13px;
+        }
+
+        .top-bar .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 8px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-left span {
+            margin-right: 15px;
+            opacity: 0.85;
+        }
+
+        .top-right span {
+            margin-left: 10px;
+            opacity: 0.85;
+        }
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        header .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 600;
+            color: #59ab6e;
+        }
+
+        nav a {
+            margin: 0 18px;
+            text-decoration: none;
+            color: #212934;
+            font-weight: 400;
+        }
+
+        .icons span {
+            margin-left: 18px;
+            font-size: 18px;
+        }
+
+        .hero {
+            background: #efefef;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            max-width: 520px;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .hero-text h2 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #6c757d;
+        }
+
+        .hero-image img {
+            max-width: 360px;
+            width: 100%;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 40px;
+            color: #59ab6e;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .arrow.left {
+            left: 30px;
+        }
+
+        .arrow.right {
+            right: 30px;
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 30px;
+        }
+
+        .dots span {
+            width: 30px;
+            height: 3px;
+            background: #cfd8d3;
+            margin: 0 4px;
+        }
+
+        .dots span.active {
+            background: #59ab6e;
+        }
+
+        @media (max-width: 992px) {
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                margin-bottom: 40px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .hero-text h2 {
+                font-size: 18px;
+            }
+
+            .arrow {
+                display: none;
+            }
+        }
+
+        .featured-section {
+            background: #eef1f7;
+            padding: 80px 0;
+        }
+
+        .featured-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .featured-header h2 {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        .featured-header p {
+            font-size: 15px;
+            color: #6c757d;
+            line-height: 1.7;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .featured-card {
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+        }
+
+        .featured-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 25px;
+        }
+
+        .featured-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .stars i {
+            color: #ede861;
+            font-size: 14px;
+        }
+
+        .price {
+            color: #adb5bd;
+            font-size: 15px;
+        }
+
+        .featured-content h4 {
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .featured-content p {
+            font-size: 14px;
+            color: #6c757d;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .reviews {
+            font-size: 14px;
+            color: #adb5bd;
+        }
+
+        @media (max-width: 1200px) {
+            .featured-grid {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .featured-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .featured-header h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .featured-section {
+                padding: 60px 0;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-card img {
+                height: 240px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .featured-header h2 {
+                font-size: 28px;
+            }
+
+            .featured-content {
+                padding: 20px;
+            }
+
+            .featured-content h4 {
+                font-size: 20px;
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #f5f7fa;
+            color: #212529;
+        }
+
+        .categories-section {
+            padding: 90px 0;
+        }
+
+        .categories-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .categories-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 70px;
+        }
+
+        .categories-header h2 {
+            font-size: 38px;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+
+        .categories-header p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #6c757d;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            text-align: center;
+        }
+
+        .category-card h4 {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 22px 0 14px;
+        }
+
+        .category-card a {
+            display: inline-block;
+            padding: 11px 28px;
+            background: #59ab6e;
+            color: #ffffff;
+            font-size: 14px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .category-card a:hover {
+            background: #4e9d63;
+        }
+
+        .category-image {
+            width: 260px;
+            height: 260px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid #e4e7ea;
+            background: #ffffff;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 1200px) {
+            .categories-container {
+                max-width: 960px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 36px;
+            }
+
+            .categories-header h2 {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .categories-section {
+                padding: 70px 0;
+            }
+
+            .category-image {
+                width: 230px;
+                height: 230px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .categories-header {
+                margin-bottom: 50px;
+            }
+
+            .categories-header h2 {
+                font-size: 30px;
+            }
+
+            .category-image {
+                width: 210px;
+                height: 210px;
+            }
+        }
+
+        /* FOOTER STYLES */
+        footer {
+            background-color: #212934;
+            color: #cfd6e1;
+            border-top: 3px solid #59ab6e;
+            padding-top: 60px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #cfd6e1;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #59ab6e;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #2d3846;
+        }
+
+        .footer-col h2 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #2d3846;
+            color: #fff;
+        }
+
+        .footer-col h2.text-green {
+            color: #59ab6e;
+        }
+
+        .contact-list,
+        .link-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-list li,
+        .link-list li {
+            margin-bottom: 12px;
+            font-size: 14px;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-list i {
+            width: 25px;
+            text-align: center;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0 60px 0;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #2d3846;
+            border-radius: 50%;
+            color: #cfd6e1;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: #59ab6e;
+            border-color: #59ab6e;
+            color: #fff;
+        }
+
+        .newsletter {
+            display: flex;
+        }
+
+        .newsletter input {
+            background: transparent;
+            border: 1px solid #2d3846;
+            padding: 10px 15px;
+            color: #fff;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+            font-size: 14px;
+            width: 250px;
+        }
+
+        .newsletter button {
+            background-color: #59ab6e;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .newsletter button:hover {
+            background-color: #4e9560;
+        }
+
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .footer-col:first-child {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-col:first-child {
+                grid-column: span 1;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .newsletter {
+                width: 100%;
+            }
+
+            .newsletter input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-left">
+                <span>info@company.com</span>
+                <span>010-020-0340</span>
+            </div>
+            <div class="top-right icons">
+                <span><a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a></span>
+                <span><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></span>
+                <span><a href="https://www.twitter.com/"><i class="fa-brands fa-x-twitter"></i></a></span>
+                <span><a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">Zay</div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Shop</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="icons">
+                <span>🔍</span>
+                <span>🛒</span>
+                <span>👤</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="arrow left">‹</div>
+        <div class="arrow right">›</div>
+
+        <div class="container">
+            <div class="hero-text">
+                <h1>Proident occaecat</h1>
+                <h2>Aliquip ex ea commodo consequat</h2>
+                <p>
+                    You are permitted to use this Zay CSS template for your commercial
+                    websites. You are not permitted to re-distribute the template ZIP
+                    file in any kind of template collection websites.
+                </p>
+            </div>
+
+            <div class="hero-image">
+                <img src="banner_img_01.jpg" alt="Product">
+            </div>
+        </div>
+
+        <div class="dots">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+        </div>
+    </section>
+
+    <section class="categories-section">
+        <div class="categories-container">
+            <div class="categories-header">
+                <h2>Categories of The Month</h2>
+                <p>
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                </p>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="category_img_01.jpg" alt="">
+                    </div>
+                    <h4>Watches</h4>
+                    <a href="#">Go Shop</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="category_img_02.jpg" alt="">
+                    </div>
+                    <h4>Shoes</h4>
+                    <a href="#">Go Shop</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="category_img_03.jpg" alt="">
+                    </div>
+                    <h4>Accessories</h4>
+                    <a href="#">Go Shop</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-section">
+        <div class="container">
+            <div class="featured-header">
+                <h2>Featured Product</h2>
+                <p>
+                    Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident.
+                </p>
+            </div>
+
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <img src="./1.jpg" alt="">
+                    <div class="featured-content">
+                        <div class="featured-top">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <span class="price">$240.00</span>
+                        </div>
+                        <h4>Gym Weight</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Sunt in culpa qui officia deserunt.
+                        </p>
+                        <span class="reviews">Reviews (24)</span>
+                    </div>
+                </div>
+
+                <div class="featured-card">
+                    <img src="./2.jpg" alt="">
+                    <div class="featured-content">
+                        <div class="featured-top">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <span class="price">$480.00</span>
+                        </div>
+                        <h4>Cloud Nike Shoes</h4>
+                        <p>
+                            Aenean gravida dignissim finibus. Nullam ipsum diam,
+                            posuere vitae pharetra sed.
+                        </p>
+                        <span class="reviews">Reviews (48)</span>
+                    </div>
+                </div>
+
+                <div class="featured-card">
+                    <img src="./3.jpg" alt="">
+                    <div class="featured-content">
+                        <div class="featured-top">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="price">$360.00</span>
+                        </div>
+                        <h4>Summer Addides Shoes</h4>
+                        <p>
+                            Curabitur ac mi sit amet diam luctus porta.
+                            Phasellus pulvinar sagittis diam.
+                        </p>
+                        <span class="reviews">Reviews (69)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h2 class="text-green">Zay Shop</h2>
+                    <ul class="contact-list">
+                        <li><i class="fa-solid fa-location-dot"></i> 123 Consectetur at ligula 10660</li>
+                        <li><i class="fa-solid fa-phone"></i> 010-020-0340</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@company.com</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h2>Products</h2>
+                    <ul class="link-list">
+                        <li><a href="#">Luxury</a></li>
+                        <li><a href="#">Sport Wear</a></li>
+                        <li><a href="#">Men's Shoes</a></li>
+                        <li><a href="#">Women's Shoes</a></li>
+                        <li><a href="#">Popular Dress</a></li>
+                        <li><a href="#">Gym Accessories</a></li>
+                        <li><a href="#">Sport Shoes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h2>Further Info</h2>
+                    <ul class="link-list">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Shop Locations</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <div class="newsletter">
+                    <input type="email" placeholder="Email address">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

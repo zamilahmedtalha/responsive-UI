@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us – Zay</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:"Poppins",sans-serif
+        }
+
+        body{
+            color:#212934;
+            background:#f5f7fa
+        }
+
+        .top-bar{
+            background:#212934;
+            color:#fff;
+            font-size:13px
+        }
+
+        .top-bar .container{
+            max-width:1200px;
+            margin:auto;
+            padding:8px 15px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center
+        }
+
+        .top-left span{
+            margin-right:15px;
+            opacity:.85
+        }
+
+        .top-right a{
+            color:#fff;
+            margin-left:12px
+        }
+
+        header{
+            background:#fff;
+            border-bottom:1px solid #e5e5e5
+        }
+
+        header .container{
+            max-width:1200px;
+            margin:auto;
+            padding:18px 15px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:600;
+            color:#59ab6e
+        }
+
+        nav a{
+            margin:0 18px;
+            text-decoration:none;
+            color:#212934;
+            font-weight:400
+        }
+
+        .icons span{
+            margin-left:18px;
+            font-size:18px
+        }
+
+        .about-hero{
+            background:#59ab6e;
+            padding:110px 0
+        }
+
+        .about-hero .container{
+            max-width:1200px;
+            margin:auto;
+            padding:0 15px;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:60px;
+            align-items:center
+        }
+
+        .about-text h1{
+            font-size:42px;
+            font-weight:500;
+            color:#fff;
+            margin-bottom:20px
+        }
+
+        .about-text p{
+            font-size:15px;
+            line-height:1.8;
+            color:#eef5f1;
+            max-width:520px
+        }
+
+        .about-image img{
+            max-width:420px;
+            width:100%
+        }
+
+        .values{
+            padding:90px 0;
+            background:#fff
+        }
+
+        .values .container{
+            max-width:1200px;
+            margin:auto;
+            padding:0 15px
+        }
+
+        .values h2{
+            text-align:center;
+            font-size:34px;
+            font-weight:300;
+            margin-bottom:60px
+        }
+
+        .values-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:40px
+        }
+
+        .value-card{
+            background:#f5f7fa;
+            padding:40px;
+            border-radius:6px;
+            text-align:center
+        }
+
+        .value-card i{
+            font-size:36px;
+            color:#59ab6e;
+            margin-bottom:20px
+        }
+
+        .value-card h4{
+            font-size:20px;
+            margin-bottom:12px
+        }
+
+        .value-card p{
+            font-size:14px;
+            color:#6c757d;
+            line-height:1.7
+        }
+
+        footer{
+            background:#212934;
+            color:#cfd6e1;
+            border-top:3px solid #59ab6e;
+            padding-top:60px
+        }
+
+        footer .container{
+            max-width:1200px;
+            margin:auto;
+            padding:0 20px
+        }
+
+        footer a{
+            color:#cfd6e1;
+            text-decoration:none
+        }
+
+        .footer-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:40px;
+            padding-bottom:40px;
+            border-bottom:1px solid #2d3846
+        }
+
+        .footer-col h2{
+            font-size:24px;
+            font-weight:500;
+            margin-bottom:20px;
+            padding-bottom:15px;
+            border-bottom:1px solid #2d3846;
+            color:#fff
+        }
+
+        .footer-col h2.text-green{
+            color:#59ab6e
+        }
+
+        .footer-col ul{
+            list-style:none
+        }
+
+        .footer-col li{
+            margin-bottom:12px;
+            font-size:14px
+        }
+
+        .footer-bottom{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:40px 0 60px
+        }
+
+        .social-icons{
+            display:flex;
+            gap:15px
+        }
+
+        .social-icons a{
+            width:40px;
+            height:40px;
+            border:1px solid #2d3846;
+            border-radius:50%;
+            display:flex;
+            justify-content:center;
+            align-items:center
+        }
+
+        @media(max-width:992px){
+            nav{display:none}
+            .about-hero .container{
+                grid-template-columns:1fr;
+                text-align:center
+            }
+            .values-grid{
+                grid-template-columns:1fr 1fr
+            }
+        }
+
+        @media(max-width:576px){
+            .values-grid{
+                grid-template-columns:1fr
+            }
+            .about-text h1{
+                font-size:32px
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="container">
+        <div class="top-left">
+            <span>info@company.com</span>
+            <span>010-020-0340</span>
+        </div>
+        <div class="top-right">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</div>
+
+<header>
+    <div class="container">
+        <div class="logo">Zay</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#">Shop</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="icons">
+            <span>🔍</span>
+            <span>🛒</span>
+            <span>👤</span>
+        </div>
+    </div>
+</header>
+
+<section class="about-hero">
+    <div class="container">
+        <div class="about-text">
+            <h1>About Us</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="about-hero.svg" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="values">
+    <div class="container">
+        <h2>Why Choose Us</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fa-solid fa-truck"></i>
+                <h4>Fast Delivery</h4>
+                <p>Reliable and quick delivery for all your orders.</p>
+            </div>
+            <div class="value-card">
+                <i class="fa-solid fa-shield"></i>
+                <h4>Secure Payment</h4>
+                <p>Your transactions are protected with top security.</p>
+            </div>
+            <div class="value-card">
+                <i class="fa-solid fa-thumbs-up"></i>
+                <h4>Quality Products</h4>
+                <p>We provide premium quality products you can trust.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h2 class="text-green">Zay Shop</h2>
+                <ul>
+                    <li>123 Consectetur at ligula 10660</li>
+                    <li>010-020-0340</li>
+                    <li>info@company.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h2>Products</h2>
+                <ul>
+                    <li><a href="#">Luxury</a></li>
+                    <li><a href="#">Sport Wear</a></li>
+                    <li><a href="#">Men's Shoes</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h2>Further Info</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

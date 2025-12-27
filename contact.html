@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us – Zay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:"Poppins",sans-serif
+        }
+
+        body{
+            color:#212934;
+            background:#f5f7fa
+        }
+
+        .top-bar{
+            background:#212934;
+            color:#fff;
+            font-size:13px
+        }
+
+        .top-bar .container{
+            max-width:1200px;
+            margin:auto;
+            padding:8px 15px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center
+        }
+
+        .top-left span{
+            margin-right:15px;
+            opacity:.85
+        }
+
+        .top-right a{
+            color:#fff;
+            margin-left:12px
+        }
+
+        header{
+            background:#fff;
+            border-bottom:1px solid #e5e5e5
+        }
+
+        header .container{
+            max-width:1200px;
+            margin:auto;
+            padding:18px 15px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:600;
+            color:#59ab6e
+        }
+
+        nav a{
+            margin:0 18px;
+            text-decoration:none;
+            color:#212934
+        }
+
+        .icons span{
+            margin-left:18px;
+            font-size:18px
+        }
+
+        .contact-hero{
+            background:#eef2f6;
+            padding:90px 20px;
+            text-align:center
+        }
+
+        .contact-hero h1{
+            font-size:42px;
+            font-weight:400;
+            margin-bottom:15px
+        }
+
+        .contact-hero p{
+            max-width:650px;
+            margin:auto;
+            font-size:15px;
+            color:#6c757d
+        }
+
+        .map{
+            width:100%;
+            height:420px
+        }
+
+        .map iframe{
+            width:100%;
+            height:100%;
+            border:0
+        }
+
+        .contact-form{
+            background:#fff;
+            padding:80px 20px
+        }
+
+        .contact-form .container{
+            max-width:1000px;
+            margin:auto
+        }
+
+        .form-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:25px
+        }
+
+        label{
+            font-size:14px;
+            margin-bottom:8px;
+            display:block
+        }
+
+        input, textarea{
+            width:100%;
+            padding:14px;
+            border:1px solid #e5e5e5;
+            border-radius:4px;
+            font-size:14px
+        }
+
+        textarea{
+            resize:none;
+            height:160px
+        }
+
+        .full{
+            grid-column:1 / -1
+        }
+
+        .submit-btn{
+            margin-top:30px
+        }
+
+        .submit-btn button{
+            background:#59ab6e;
+            color:#fff;
+            border:none;
+            padding:14px 40px;
+            font-size:15px;
+            border-radius:4px;
+            cursor:pointer
+        }
+
+        footer{
+            background:#212934;
+            color:#cfd6e1;
+            border-top:3px solid #59ab6e;
+            padding:60px 20px
+        }
+
+        footer .container{
+            max-width:1200px;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:40px
+        }
+
+        footer h2{
+            color:#fff;
+            font-size:22px;
+            margin-bottom:20px
+        }
+
+        footer ul{
+            list-style:none
+        }
+
+        footer li{
+            margin-bottom:12px;
+            font-size:14px
+        }
+
+        footer a{
+            color:#cfd6e1;
+            text-decoration:none
+        }
+
+        @media(max-width:768px){
+            nav{display:none}
+            .form-grid{
+                grid-template-columns:1fr
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="container">
+        <div class="top-left">
+            <span>info@company.com</span>
+            <span>010-020-0340</span>
+        </div>
+        <div class="top-right">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</div>
+
+<header>
+    <div class="container">
+        <div class="logo">Zay</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#">Shop</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="icons">
+            <span>🔍</span>
+            <span>🛒</span>
+            <span>👤</span>
+        </div>
+    </div>
+</header>
+
+<section class="contact-hero">
+    <h1>Contact Us</h1>
+    <p>
+        Proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet.
+    </p>
+</section>
+
+<section class="map">
+    <iframe
+        src="https://www.google.com/maps?q=Minar-e-Pakistan,Lahore&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+
+<section class="contact-form">
+    <div class="container">
+        <form>
+            <div class="form-grid">
+                <div>
+                    <label>Name</label>
+                    <input type="text" placeholder="Name">
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="email" placeholder="Email">
+                </div>
+                <div class="full">
+                    <label>Subject</label>
+                    <input type="text" placeholder="Subject">
+                </div>
+                <div class="full">
+                    <label>Message</label>
+                    <textarea placeholder="Message"></textarea>
+                </div>
+            </div>
+            <div class="submit-btn">
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div>
+            <h2>Zay Shop</h2>
+            <ul>
+                <li>Lahore, Pakistan</li>
+                <li>010-020-0340</li>
+                <li>info@company.com</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Products</h2>
+            <ul>
+                <li><a href="#">Luxury</a></li>
+                <li><a href="#">Sport Wear</a></li>
+                <li><a href="#">Men Shoes</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2>Further Info</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
